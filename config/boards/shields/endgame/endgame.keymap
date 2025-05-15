@@ -11,14 +11,16 @@
 #include "keys_de.h"
 
 #define BASE 0
-#define SYM  1
-#define NUM  2
-#define FUN  3
-#define NAV  4
-#define OTHER 5
+#define NUM  1
+#define NAV  2
+#define DE   3
 
-&caps_word {
-    continue-list = <UNDERSCORE MINUS BSPC DEL>;
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
+combo_##NAME { \
+    timeout-ms = <20>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYERS>; \
 };
 
 
@@ -33,84 +35,111 @@
     };
 
     combos {
-        compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <20>;
-            key-positions = <22 23>;
-            bindings = <&kp ESC>;
-            layers = <BASE SYM NUM NAV>;
+       compatible = "zmk,combos";
+        /* Top corners (Q+P) = bootloader */
+        combo_boot {
+            key-positions = <0 9>;
+            bindings = <&bootloader>;
         };
-
-        combo_enter {
-            timeout-ms = <20>;
-            key-positions = <23 24>;
-            bindings = <&kp RET>;
-            layers = <BASE SYM NUM NAV>;
-        };
+       
+        COMBO(shiftablesch, &macro_shiftable_sch, 17 18, 0)
+        COMBO(LT,   &kp NUBS,       21  22, 0 ) // lower than
+        COMBO(PIP,   &kp RA(NUBS),  21  22, 1)  // PIPE
+        COMBO(GT,   &kp LS(NUBS),   27  28, 0 ) // greater than
+        COMBO(TLD,  &kp RA(RBKT),   27  28, 1) // Tilde
+        COMBO(DOT,  &kp DOT,        12  13, 0 1)  
+        COMBO(CMA,&kp COMMA,        16  17, 0 1)
+        COMBO(ESC,  &kp ESC,        10  1,  0 1 2 3)
+        COMBO(SQT,  &kp LS(NUHS),   22  23, 0 ) // Single quotes
+        COMBO(DQT,  &kp LS(N2),     26  27, 0 )// Double quotes
+        COMBO(EQL,  &kp LS(N0),     26  27, 1)
+        COMBO(ENTR, &kp ENTER,      7   8,  0 1 2 3)
+        COMBO(TAB, &kp TAB,         1   2,  0 1 2 3)
+        COMBO(COL, &kp LS(DOT),     11 12,  1)
+        COMBO(SCL, &kp LS(COMMA),   17 18,  1)
 
     };
 
     behaviors {
-        hm: homerow_mods {
+        hl: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
+            label = "homerow mods left";
             #binding-cells = <2>;
-            tapping-term-ms = <190>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            //flavor = "hold-preferred";
+            // flavor = "tap-preferred";
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            //quick-tap-ms = <100>;
+            //hold-while-undecided;
+            // global-quick-tap;
             bindings = <&kp>, <&kp>;
+            // opposite side hand keys
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33 34 35>;
+        };
+        hr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "homerow mods right";
+            #binding-cells = <2>;
+            //flavor = "hold-preferred";
+            // flavor = "tap-preferred";
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            //hold-while-undecided;
+            //quick-tap-ms = <100>;
+            // global-quick-tap;
+            bindings = <&kp>, <&kp>;
+            // opposite side hand keys
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33 34 35>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
+        // ------------------------------------------------------------------------------------------------------
+// |    0    |    1    |    2    |    3    |    4    |    5    |    6    |    7    |    8    |    9    |
+// |   10    |   11    |   12    |   13    |   14    |   15    |   16    |   17    |   18    |   19    |
+// |   20    |   21    |   22    |   23    |   24    |   25    |   26    |   27    |   28    |   29    |
+// |   30    |                   |   31    |   32    |   33    |   34    |                   |   35    |
 
-        base_layer {
+        BASE_layer {
             label= "BASE";
             bindings = <
-                &kp DE_Q       &kp DE_W       &kp DE_E       &kp DE_R       &kp DE_T        &kp DE_Z       &kp DE_U       &kp DE_I       &kp DE_O       &kp DE_P
-                &hm LGUI DE_A  &hm LALT DE_S  &hm LCTRL DE_D &hm LSHFT DE_F &kp DE_G        &kp DE_H       &hm LSHFT DE_J &hm LCTRL DE_K &hm LALT DE_L  &hm LGUI DE_HASH
-                &kp DE_Y       &kp DE_X       &kp DE_C       &kp DE_V       &kp DE_B        &kp DE_N       &kp DE_M       &kp DE_COMMA   &kp DE_DOT     &kp DE_MINUS
-                                              &caps_word     &lt NUM DEL    &lt FUN BSPC    &lt NAV SPC    &lt SYM TAB    &kp K_CALC
+                &kp Q       &kp V        &kp K          &kp C           &kp SLASH   &kp NUHS    &kp H       &kp G       &kp F       &kp P
+                &kp U       &hl LALT I   &hl LSHFT A    &hl LCTRL E     &kp O       &kp D       &hr LCTRL N &hr LSHFT R &hr LALT T  &kp S
+                &hl LGUI X  &kp Z        &kp Y          &kp L           &kp DOT     &kp COMMA   &kp M       &kp B       &kp W       &hr LGUI J
+                &none                                   &lt 1 SPACE     &lt 2 DOT   &kp RALT    &lt 3 BSPC                          &none
                         >;
         };
 
-        sym_layer {
-            label= "SYM";
-            bindings = <
-                &kp DE_AT   &kp DE_LPAR &kp DE_RPAR  &kp DE_UDIA  &kp DE_SS       &none    &none     &bt BT_PRV &bt BT_NXT &bt BT_CLR
-                &kp DE_BSLS &kp DE_LCBR &kp DE_RCBR  &kp DE_ADIA  &kp DE_ODIA     &none    &kp LSHFT &kp LCTRL  &kp LALT   &kp LGUI
-                &kp DE_EURO &kp DE_LBRC &kp DE_RBRC  &kp DE_ASTRK &kp DE_GRV      &none    &none     &none      &none      &none
-                                        &trans       &trans       &trans          &trans   &trans    &trans
-            >;
-        };
 
-        num_layer {
+        NUM_layer {
             label= "NUM";
             bindings = <
-                &none     &none         &kp LC(PG_UP) &kp LC(PG_DN) &none        &kp DE_TILD  &kp DE_N7 &kp DE_N8 &kp DE_N9  &none
-                &kp LGUI  &kp LALT      &kp LCTRL     &kp LSHFT     &none        &kp DE_PIPE  &kp DE_N4 &kp DE_N5 &kp DE_N6  &kp DE_LT
-                &none     &kp LC(LS(X)) &kp LC(LS(C)) &kp LC(LS(V)) &none        &kp DE_QMARK &kp DE_N1 &kp DE_N2 &kp DE_N3  &kp DE_PLUS
-                                        &trans        &trans        &trans       &trans       &kp DE_N0 &trans
+                &kp F1      &kp F2        &kp F3           &kp F4           &kp F5     &kp F6         &kp F7       &kp F8       &kp F9         &kp F10
+                &kp N1      &hl LALT N2   &hl LSHFT N3     &hl LCTRL N4     &kp N5     &kp N6         &hr LCTRL N7 &hr LSHFT N8 &hr LALT N9    &kp N0
+                &kp DEL     &macro_brc3   &macro_brc2      &macro_brc1      &kp FSLH   &kp LS(FSLH)   &kp RBKT     &kp SLASH    &kp LS(RBKT)   &kp LS(N7) 
+                                        &trans        &trans        &trans       &trans       &trans &trans
             >;
         };
 
-        fun_layer {
-            label= "FUN";
-            bindings = <
-                &sk LGUI  &sk LALT     &sk LCTRL    &sk LSHFT    &none        &none    &kp F7  &kp F8  &kp F9   &kp F12
-                &kp LGUI  &kp LALT     &kp LCTRL    &kp LSHFT    &none        &none    &kp F4  &kp F5  &kp F6   &kp F11
-                &none     &kp LC(DE_X) &kp LC(DE_C) &kp LC(DE_V) &none        &none    &kp F1  &kp F2  &kp F3   &kp F10
-                                       &trans       &trans       &trans       &trans   &trans  &trans
-            >;
-        };
+        
 
-        nav_layer {
+        NAV_layer {
             label= "NAV";
             bindings = <
-                &caps_word &kp PG_UP &kp HOME   &kp UP   &kp END        &kp C_VOL_UP    &kp C_PREV  &kp C_PP     &kp C_NEXT  &none
-                &kp CLCK   &kp PG_DN &kp LEFT   &kp DOWN &kp RIGHT      &kp C_MUTE      &kp LSHFT   &kp LCTRL    &kp LALT    &kp LGUI
-                &kp INS    &none     &none      &none    &none          &kp C_VOL_DN    &none       &none        &none       &none
+                &kp TAB     &kp HOME     &kp UP        &kp END        &snip        &kp LS(N5)   &kp LS(N2)      &kp BSLH         &kp GRAVE         &kp NUHS
+                &kp DEL     &kp LEFT     &hl LSHFT DOWN &kp RIGHT     &kp LC(S)    &kp LS(N0)   &hr LCTRL RBKT  &hr LSHIFT SLASH &hr LALT LS(RBKT) &kp LS(N7)
+                &kp LC(Y)   &kp LC(X)    &kp LC(C)     &kp LC(V)      &kp NUBS     &kp LS(GRAVE) &kp LS(N6)     &kp LS(GRAVE)    &kp RA(RBKT)      &kp RA(MINUS)
                                      &trans     &trans   &trans         &trans          &trans      &trans
+            >;
+        };
+        DE_layer {
+            label= "DE";
+            bindings = <
+                &kp RA(Q) &trans       &trans       &kp C_VOL_DN &kp C_MUTE &trans   &kp C_VOL_UP   &trans               &trans       &kp ENTER
+                &kp LBKT  &trans       &kp SQT      &kp RA(E)    &kp SEMI   &trans   &kp LS(N1)     &hr LSHIFT LS(MINUS) &trans       &kp MINUS
+                &none     &none        &none        &none        &none      &none    &none          &none                &none        &none
+                                        &trans       &trans       &trans       &trans   &trans  &trans
             >;
         };
     };
