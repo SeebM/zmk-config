@@ -59,6 +59,62 @@ combo_##NAME { \
         COMBO(SCL, &kp LS(COMMA),   17 18,  1)
 
     };
+    macros {       
+        snip: snip {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LSHFT &kp LEFT_GUI
+                        &macro_tap &kp S
+                        &macro_release &kp LSHIFT &kp LEFT_GUI>;
+            label = "SNIP";
+        };
+        macro_shiftable_sch: macro_shiftable_sch {
+            label = "Macro_shiftable_sch";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                    &macro_tap &kp S
+                    &macro_release &kp LSHIFT
+                    &macro_tap &kp C &kp H
+            >;
+            tap-ms = <10>;
+        };
+        macro_brc1: macro_brc1 {
+            label = "macro_brc1";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                    &macro_tap &kp LS(N8)
+                    &macro_tap &kp LS(N9)
+                    &macro_tap &kp LEFT
+            >;
+            tap-ms = <10>;
+        };
+        macro_brc2: macro_brc2 {
+            label = "macro_brc2";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                    &macro_tap &kp RA(N8)
+                    &macro_tap &kp RA(N9)
+                    &macro_tap &kp LEFT
+            >;
+            tap-ms = <10>;
+        };
+        macro_brc3: macro_brc3 {
+            label = "macro_brc3";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                    &macro_tap &kp RA(N7)
+                    &macro_tap &kp RA(N0)
+                    &macro_tap &kp LEFT
+            >;
+            tap-ms = <10>;
+        };
+
+        
+    };
 
     behaviors {
         hl: homerow_mods_left {
