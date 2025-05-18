@@ -181,8 +181,8 @@ macros {
             bindings = <
 &kp RA(Q)           &trans          &trans          &kp C_VOL_DN    &kp C_MUTE &trans   &kp C_VOL_UP    &trans              &trans           &kp ENTER
 &kp LBKT            &trans          &kp SQT         &kp RA(E)       &kp SEMI  &trans    &kp LS(N1)      &hr LSHIFT LS(MINUS)  &trans         &kp MINUS
-&rgb_ug RGB_SPD     &rgb_ug RGB_SPI &rgb_ug RGB_BRD &rgb_ug RGB_BRI &trans    &trans    &rgb_ug RGB_HUD &rgb_ug RGB_HUI     &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
-                                                    &trans          &trans    &trans    &trans  
+&rgb_ug RGB_SPD     &rgb_ug RGB_SPI &rgb_ug RGB_BRD &rgb_ug RGB_BRI &bt BT_SEL 0    &bt BT_SEL 1    &rgb_ug RGB_HUD &rgb_ug RGB_HUI     &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
+                                                    &trans          &trans    &bt BT_CLR    &trans  
             >;
         };
     };
