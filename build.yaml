@@ -19,5 +19,4 @@
 #
 ---
 include:
-  - board: seeeduino_xiao_ble
-    shield: regret
+  - board: BOARD_NIUNIU_GB34_RP2040
