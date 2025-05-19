@@ -18,7 +18,7 @@
 #     artifact-name: corne_left_with_studio
 
 
-board: [ "boards/Niuniu_GB34_RP2040" ]
+-- Board: Niuniu_GB34_RP2040
 #include:
 #  - board: Niuniu_GB34_RP2040
 #
