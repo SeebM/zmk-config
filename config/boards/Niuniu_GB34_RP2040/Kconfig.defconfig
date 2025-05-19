@@ -1,0 +1,12 @@
+# Copyright (c) 2023 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if BOARD_NIUNIU_GB34_RP2040
+
+config ZMK_KEYBOARD_NAME
+    default "Niuniu GB34"
+
+config RP2_FLASH_W25Q080
+    default y
+
+endif # BOARD_NIUNIU_GB34_RP2040

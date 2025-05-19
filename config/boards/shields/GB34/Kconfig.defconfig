@@ -1,6 +1,0 @@
-if SHIELD_GB34
-
-config ZMK_KEYBOARD_NAME
-    default "GB34"
-
-endif
