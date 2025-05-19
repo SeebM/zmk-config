@@ -19,4 +19,4 @@
 #
 ---
 include:
-  - board: BOARD_NIUNIU_GB34_RP2040
+  - board: Niuniu_GB34_RP2040
