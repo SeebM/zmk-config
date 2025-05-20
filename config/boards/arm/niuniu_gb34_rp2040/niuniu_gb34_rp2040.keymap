@@ -39,9 +39,9 @@
 // |   20    |   21    |   22    |   23    |   24    |   25    |   26    |   27    |   28    |   29    |
 //                 |   30    |   31    |   32    |   33    |
             bindings = <
-    &kp Q       &kp V       &kp K    &kp C     &kp SLASH  &kp none      &kp NUHS    &kp H       &kp G  &kp F    &kp P
-    &kp U       &kp I       &kp A    &kp E     &kp O      &kp none      &kp D       &kp N       &kp R  &kp T    &kp S
-    &kp X       &kp Z       &kp Y    &kp L     &kp DOT    &kp none      &kp COMMA   &kp M       &kp B  &kp W    &kp J
+    &kp Q       &kp V       &kp K    &kp C     &kp SLASH  &none      &kp NUHS    &kp H       &kp G  &kp F    &kp P
+    &kp U       &kp I       &kp A    &kp E     &kp O      &none      &kp D       &kp N       &kp R  &kp T    &kp S
+    &kp X       &kp Z       &kp Y    &kp L     &kp DOT    &none      &kp COMMA   &kp M       &kp B  &kp W    &kp J
                    &none        &none      &kp  SPACE     &kp DOT               &kp BSPC    &none   &none 
             >;
         };
