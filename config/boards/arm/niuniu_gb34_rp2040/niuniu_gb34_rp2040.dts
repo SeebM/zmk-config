@@ -109,6 +109,6 @@ zephyr_udc0: &usbd {
     status = "okay";
 };
 
-&layout_ortho_4x11_1x2u {
+&layout_GB34_ortho_1x2u {
     transform = <&default_transform>;
 };
