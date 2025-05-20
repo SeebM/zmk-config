@@ -51,7 +51,7 @@
     };
 };
 
-&niuniu_GB34_ortho_1x2u_position_mapp {
+&niuniu_GB34_ortho_1x2u_position_map {
     GB34_ortho_1x2u_posmap: layout_ortho_4x11_1x2u {
         physical-layout = <&layout_ortho_4x11_1x2u>;
         positions
