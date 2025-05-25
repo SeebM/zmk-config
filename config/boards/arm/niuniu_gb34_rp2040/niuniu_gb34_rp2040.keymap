@@ -154,7 +154,7 @@ combo_##NAME { \
                    &none       &none    &lt 1 SPACE         &lt 2 DOT     &lt 3 BSPC  &none       &none 
             >;
         };
-   /*     NUM_layer {
+        NUM_layer {
             label= "NUM";
             bindings = <
     &kp F1      &kp F2        &kp F3           &kp F4           &kp F5     &none   &kp F6         &kp F7       &kp F8       &kp F9         &kp F10
@@ -164,22 +164,24 @@ combo_##NAME { \
             >;
         };
         NAV_layer {
-            label= "NAV";
-            bindings = <
-    &kp TAB     &kp HOME     &kp UP        &kp END        &snip      &none      &kp LS(N5)   &kp LS(N2)      &kp BSLH         &kp GRAVE         &kp NUHS
-    &kp DEL     &kp LEFT     &hl LSHFT DOWN &kp RIGHT     &kp LC(S)  &none      &kp LS(N0)   &hr LCTRL RBKT  &hr LSHIFT SLASH &hr LALT LS(RBKT) &kp LS(N7)
-    &kp LC(Y)   &kp LC(X)    &kp LC(C)     &kp LC(V)      &kp NUBS   &none      &kp LS(GRAVE) &kp LS(N6)     &kp LS(GRAVE)    &kp RA(RBKT)      &kp RA(MINUS)
-                    &trans    &trans    &trans              &trans       &trans       &trans     &trans
-        };
+    label= "NAV";
+    bindings = <
+        &kp TAB     &kp HOME     &kp UP        &kp END        &snip      &none      &kp LS(N5)   &kp LS(N2)      &kp BSLH         &kp GRAVE         &kp NUHS
+        &kp DEL     &kp LEFT     &hl LSHFT DOWN &kp RIGHT     &kp LC(S)  &none      &kp LS(N0)   &hr LCTRL RBKT  &hr LSHIFT SLASH &hr LALT LS(RBKT) &kp LS(N7)
+        &kp LC(Y)   &kp LC(X)    &kp LC(C)     &kp LC(V)      &kp NUBS   &none      &kp LS(GRAVE) &kp LS(N6)     &kp LS(GRAVE)    &kp RA(RBKT)      &kp RA(MINUS)
+        &trans      &trans       &trans        &trans         &trans     &trans     &trans
+    >;
+};
+
         DE_layer {
             label= "DE";
             bindings = <
                 &kp RA(Q) &trans       &trans       &kp C_VOL_DN &kp C_MUTE   &none  &trans   &kp C_VOL_UP   &trans               &trans       &kp ENTER
                 &kp LBKT  &trans       &kp SQT      &kp RA(E)    &kp SEMI     &none  &trans   &kp LS(N1)     &hr LSHIFT LS(MINUS) &trans       &kp MINUS
                 &none     &none        &none        &none        &none        &none  &none    &none          &none                &none        &none
-                    &trans    &trans    &trans              &trans       &trans       &trans     &trans
+                &trans      &trans       &trans        &trans         &trans     &trans     &trans
             >;
-        };*/
+        };
 
         
     };
