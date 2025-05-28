@@ -1,4 +1,4 @@
-e// Copyright (c) 2023 The ZMK Contributors
+// Copyright (c) 2023 The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
 #include <behaviors.dtsi>
@@ -182,7 +182,7 @@ combo_##NAME { \
         &kp LC(Y)   &kp LC(X)    &kp LC(C)     &kp LC(V)      &kp NUBS   &none      &kp LS(GRAVE) &kp LS(N6)     &kp LS(GRAVE)    &kp RA(RBKT)      &kp RA(MINUS)
         &trans      &trans       &trans        &trans         &trans     &trans     
     >;
-};
+    };
 
         DE_layer {
             label= "DE";
