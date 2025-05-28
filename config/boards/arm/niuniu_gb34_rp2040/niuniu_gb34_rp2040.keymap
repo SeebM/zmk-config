@@ -1,4 +1,4 @@
-// Copyright (c) 2023 The ZMK Contributors
+e// Copyright (c) 2023 The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
 #include <behaviors.dtsi>
@@ -151,7 +151,7 @@ combo_##NAME { \
     &kp Q       &kp V        &kp K          &kp C           &kp C_MUTE   &none    &kp LS(LA(K))    &kp H       &kp G       &kp F       &kp P
     &kp U       &hl LALT I   &hl LSHFT A    &hl LCTRL E     &kp O       &none    &kp D       &hr LCTRL N &hr LSHFT R &hr LALT T  &kp S
     &hl LGUI X  &kp Z        &kp Y          &kp L           &kp DOT     &none    &kp COMMA   &kp M       &kp B       &kp W       &hr LGUI J
-                   &none         &lt 1 SPACE         &lt 2 TAB     &kp ENTER  &lt 3 BSPC       &none 
+                   &none         &lt 1 SPACE         &lt 2 TAB     &kp SHIFT  &lt 3 BSPC       &none 
             >;
         };
         NUM_layer {
