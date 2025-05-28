@@ -148,7 +148,7 @@ combo_##NAME { \
         BASE_layer {
             label= "BASE";
             bindings = <
-    &kp Q       &kp V        &kp K          &kp C           &kp SLASH   &none    &kp NUHS    &kp H       &kp G       &kp F       &kp P
+    &kp Q       &kp V        &kp K          &kp C           &kp C_MUTE   &none    &kp LS(LA(K))    &kp H       &kp G       &kp F       &kp P
     &kp U       &hl LALT I   &hl LSHFT A    &hl LCTRL E     &kp O       &none    &kp D       &hr LCTRL N &hr LSHFT R &hr LALT T  &kp S
     &hl LGUI X  &kp Z        &kp Y          &kp L           &kp DOT     &none    &kp COMMA   &kp M       &kp B       &kp W       &hr LGUI J
                    &none       &none    &lt 1 SPACE         &lt 2 DOT     &lt 3 BSPC  &none       &none 
