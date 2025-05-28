@@ -47,8 +47,8 @@ combo_##NAME { \
         COMBO(SQT,  &kp LS(NUHS),   24  25, 0 ) // Single quotes
         COMBO(DQT,  &kp LS(N2),     29  30, 0 )// Double quotes
         COMBO(EQL,  &kp LS(N0),     29  30, 1)
-        COMBO(ENTR, &kp ENTER,      20   21,  0 1 2 3)
-        COMBO(TAB, &kp TAB,         11   12,  0 1 2 3)
+        COMBO(ENTR, &kp ENTER,      8   9,  0 1 2 3)
+        COMBO(TAB, &kp TAB,         1   2,  0 1 2 3)
 
     };
     macros {       
@@ -151,7 +151,7 @@ combo_##NAME { \
     &kp Q       &kp V        &kp K          &kp C           &kp C_MUTE   &none    &kp LS(LA(K))    &kp H       &kp G       &kp F       &kp P
     &kp U       &hl LALT I   &hl LSHFT A    &hl LCTRL E     &kp O       &none    &kp D       &hr LCTRL N &hr LSHFT R &hr LALT T  &kp S
     &hl LGUI X  &kp Z        &kp Y          &kp L           &kp DOT     &none    &kp COMMA   &kp M       &kp B       &kp W       &hr LGUI J
-                   &none         &lt 1 SPACE         &lt 2 DOT      &none  &lt 3 BSPC       &none 
+                   &none         &lt 1 SPACE         &lt 2 TAB     &kp ENTER  &lt 3 BSPC       &none 
             >;
         };
         NUM_layer {
