@@ -20,3 +20,4 @@
 
 include:
   - board: niuniu_gb34_rp2040
+    snippet: studio-rpc-usb-uart
