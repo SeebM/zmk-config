@@ -7,9 +7,10 @@ e// Copyright (c) 2023 The ZMK Contributors
 
 
 #define BASE 0
-#define NUM  1
-#define NAV  2
-#define DE   3
+#define NUM  2
+#define NAV  3
+#define DE   4
+#define GAMING 1
 
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
 combo_##NAME { \
@@ -37,18 +38,19 @@ combo_##NAME { \
         };
        
         COMBO(shiftablesch, &macro_shiftable_sch, 19 20, 0)
-        COMBO(LT,   &kp NUBS,       23  24, 0 ) // lower than
-        COMBO(PIP,   &kp RA(NUBS),  23  24, 1)  // PIPE
-        COMBO(GT,   &kp LS(NUBS),   30  31, 0 ) // greater than
-        COMBO(TLD,  &kp RA(RBKT),   30  31, 1) // Tilde
-        COMBO(DOT,  &kp DOT,        13  14, 0 1)  
-        COMBO(CMA,&kp COMMA,        18  19, 0 1)
-        COMBO(ESC,  &kp ESC,        11  1,  0 1 2 3)
-        COMBO(SQT,  &kp LS(NUHS),   24  25, 0 ) // Single quotes
-        COMBO(DQT,  &kp LS(N2),     29  30, 0 )// Double quotes
-        COMBO(EQL,  &kp LS(N0),     29  30, 1)
-        COMBO(ENTR, &kp ENTER,      8   9,  0 1 2 3)
-        COMBO(TAB, &kp TAB,         1   2,  0 1 2 3)
+        COMBO(LT,   &kp NUBS,       23  24, BASE ) // lower than
+        COMBO(PIP,   &kp RA(NUBS),  23  24, NUM)  // PIPE
+        COMBO(GT,   &kp LS(NUBS),   30  31, BASE ) // greater than
+        COMBO(TLD,  &kp RA(RBKT),   30  31, NUM) // Tilde
+        COMBO(DOT,  &kp DOT,        13  14, BASE NUM)  
+        COMBO(CMA,&kp COMMA,        18  19, BASE NUM)
+        COMBO(ESC,  &kp ESC,        11  1,  BASE NUM NAV DE)
+        COMBO(SQT,  &kp LS(NUHS),   24  25, BASE ) // Single quotes
+        COMBO(DQT,  &kp LS(N2),     29  30, BASE )// Double quotes
+        COMBO(EQL,  &kp LS(N0),     29  30, NUM)
+        COMBO(ENTR, &kp ENTER,      8   9,  BASE NUM NAV DE)
+        COMBO(TAB, &kp TAB,         1   2,  BASE NUM NAV DE)
+        COMBO(GAM, &tog GAMING,     33  38, BASE GAMING)
 
     };
     macros {       
@@ -151,8 +153,17 @@ combo_##NAME { \
     &kp Q       &kp V        &kp K          &kp C           &kp C_MUTE   &none    &kp LS(LA(K))    &kp H       &kp G       &kp F       &kp P
     &kp U       &hl LALT I   &hl LSHFT A    &hl LCTRL E     &kp O       &none    &kp D       &hr LCTRL N &hr LSHFT R &hr LALT T  &kp S
     &hl LGUI X  &kp Z        &kp Y          &kp L           &kp DOT     &none    &kp COMMA   &kp M       &kp B       &kp W       &hr LGUI J
-                   &none         &lt 1 SPACE         &lt 2 TAB     &kp SHIFT  &lt 3 BSPC       &none 
+                   &none         &lt NUM SPACE         &lt NAV TAB     &kp LSHIFT  &lt DE BSPC       &none 
             >;
+        };
+    GAM_layer {
+        label= "GAMING";
+        bindings = <
+    &kp ESC    &kp Q    &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U     &kp I     &kp O    &kp BSPC
+    &kp LSHIFT &kp A    &kp S    &kp D    &kp F    &kp G    &kp H    &kp J     &kp K     &kp L    &kp ENTER
+    &kp LCTRL &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp COMMA &kp DOT  &kp RCTRL
+                     &kp RCTRL &trans       &kp SPACE        &TAB         &kp LALT     &kp  LGUI    
+        >;
         };
         NUM_layer {
             label= "NUM";
@@ -182,6 +193,7 @@ combo_##NAME { \
                 &trans      &trans       &trans        &trans         &trans     &trans    
             >;
         };
+        
 
         
     };
