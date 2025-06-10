@@ -4,4 +4,3 @@
 config BOARD_NIUNIU_GB34_RP2040
     bool "Niuniu GB34"
     depends on SOC_RP2040
-CONFIG_ZMK_STUDIO=y
