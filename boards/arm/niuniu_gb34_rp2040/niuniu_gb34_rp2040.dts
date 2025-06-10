@@ -1,15 +1,15 @@
 /*
- * Copyright (c) 2023 The ZMK Contributors
+ * Copyright (c) 2025 The ZMK Contributors
  * SPDX-License-Identifier: MIT
  */
 
 /dts-v1/;
 
 #include <rpi_pico/rp2040.dtsi>
-#include <dt-bindings/zmk/matrix_transform.h>
 
-//#include <layouts/common/65percent/ansi.dtsi>
-#include "ortho1x2u.dtsi"
+#include "niuniu_gb34_rp2040-transforms.dtsi"
+#include "niuniu_gb34_rp2040-layouts.dtsi"
+
 / {
 
     chosen {
@@ -17,36 +17,13 @@
         zephyr,flash = &flash0;
         zephyr,code-partition = &code_partition;
         zmk,kscan = &kscan0;
-        zmk,physical-layout = &layout_GB34_ortho_1x2u;
+       zmk-physical-layout = &layout_ortho_all1u;
     };
 
     xtal_clk: xtal-clk {
         compatible = "fixed-clock";
         clock-frequency = <12000000>;
         #clock-cells = <0>;
-    };
-
-    default_transform: keymap_transform_0 {
-        compatible = "zmk,matrix-transform";
-        columns = <11>;
-        rows = <4>;
-
-//  ------- Switch Matrix ----------
-//
-//  Column     0 |   1 |   2 |   3 |   4 |   5 |   6 |   7 |   8 |   9 |  10 |
-//          ==================================================================
-//  Row 0 ||  S0 |  S1 |  S2 |  S3 |  S4 |  S5 |  S6 |  S7 |  S8 |  S9 | S10 | 
-//  Row 1 ||  S0 |  S1 |  S2 |  S3 |  S4 |  S5 |  S6 |  S7 |  S8 |  S9 | S10 |
-//  Row 2 ||  S0 |  S1 |  S2 |  S3 |  S4 |  S5 |  S6 |  S7 |  S8 |  S9 | S10 |
-//  Row 4 ||  S0 |  S1 |  S2 |     | S4  |     |  S5 |     |  S6 |  S7 | S8  |
-//     -----------------------------------------------------------------------------------
-//
-        map = <
-RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10)
-RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5) RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10)
-RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10)
-            RC(3,1) RC(3,3)   RC(3,5)    RC(3,7) RC(3,8) RC(3,9) 
-        >;
     };
 
     kscan0: kscan {
@@ -108,8 +85,4 @@ zephyr_udc0: &usbd {
 
 &gpio0 {
     status = "okay";
-};
-
-&layout_GB34_ortho_1x2u {
-    transform = <&default_transform>;
 };
