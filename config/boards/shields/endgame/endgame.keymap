@@ -54,7 +54,7 @@ combo_##NAME { \
         COMBO(DQT,  &kp LS(N2),     26  27, 0 )// Double quotes
         COMBO(EQL,  &kp LS(N0),     26  27, 1)
         COMBO(ENTR, &kp ENTER,      7   8,  0 1 2 3)
-        COMBO(TAB, &kp TAB,         1   2,  0 1 2 3)
+        COMBO(TAB, &kp ENTER,         1   2,  0 1 2 3)
         COMBO(COL, &kp LS(DOT),     11 12,  1)
         COMBO(SCL, &kp LS(COMMA),   17 18,  1)
 
