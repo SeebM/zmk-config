@@ -49,7 +49,7 @@ combo_##NAME { \
         COMBO(DQT,  &kp LS(N2),     29  30, BASE )// Double quotes
         COMBO(EQL,  &kp LS(N0),     29  30, NUM)
         COMBO(ENTR, &kp ENTER,      8   9,  BASE NUM NAV DE)
-        COMBO(TAB, &kp TAB,         1   2,  BASE NUM NAV DE)
+        COMBO(ENTR2, &kp ENTER,     1   2,  BASE NUM NAV DE)
         COMBO(GAM, &tog GAMING,     33  38, BASE GAMING)
 
     };
