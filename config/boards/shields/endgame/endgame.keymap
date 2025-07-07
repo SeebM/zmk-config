@@ -49,7 +49,7 @@ combo_##NAME { \
         COMBO(GT,   &kp LS(NUBS),   27  28, 0 ) // greater than
         COMBO(TLD,  &kp RA(RBKT),   27  28, 1) // Tilde
         COMBO(DOT,  &kp DOT,        12  13, 0 1)  
-        COMBO(CMA,&kp COMMA,        11  12, 0 1)
+        COMBO(CMA,&kp COMMA,        11  13, 0 1)
         COMBO(ESC,  &kp ESC,        10  1,  0 1 2 3)
         COMBO(SQT,  &kp LS(NUHS),   26  27, NUM  ) // Single quotes
         COMBO(DQT,  &kp LS(N2),     26  27, BASE )// Double quotes
@@ -181,9 +181,9 @@ combo_##NAME { \
         NUM_layer {
             label= "NUM";
             bindings = <
-                &kp BSPC    &kp N7        &kp N8           &kp N9           &trans          &kp LS(N5)           &kp LS(N2)      &kp BSLH       &kp GRAVE         &kp NUHS
-                &kp N0      &hl LALT N1   &hl LSHFT N2     &hl LCTRL N3     &trans          &hr RALT LS(N0)      &hr LCTRL RBKT &hr LSHFT SLASH &hr LALT LS(RBKT) &kp LS(N7)
-                &kp DEL     &kp N4        &kp N5           &kp N6           &trans          &kp LS(GRAVE)        &kp LS(N6)     &kp LS(GRAVE)   &kp RA(RBKT)      &kp RA(MINUS) 
+                &kp BSPC   &kp N7        &kp N8           &kp N9           &trans          &kp LS(N5)           &kp LS(N2)      &kp BSLH       &kp GRAVE         &kp NUHS
+                &kp DEL    &hl LALT N4   &hl LSHFT N5     &hl LCTRL N6     &hl RALT ENTER  &hr RALT LS(N0)      &hr LCTRL RBKT &hr LSHFT SLASH &hr LALT LS(RBKT) &kp LS(N7)
+                &kp N0     &kp N1        &kp N2           &kp N3           &trans          &kp LS(GRAVE)        &kp LS(N6)     &kp LS(GRAVE)   &kp RA(RBKT)      &kp RA(MINUS) 
                                         &trans        &trans        &trans       &trans       &trans &trans
             >;
         };
@@ -194,7 +194,7 @@ combo_##NAME { \
             label= "NAV";
             bindings = <
                 &kp TAB     &kp HOME     &kp UP        &kp END        &snip        &trans       &kp F9        &kp F10       &kp F11     &kp F12
-                &kp DEL     &kp LEFT     &hl LSHFT DOWN &kp RIGHT     &kp LC(S)    &trans       &hr LCTRL F5  &hr LSHIFT F6 &hr LALT F7 &kp F8
+                &kp DEL     &kp LEFT     &hl LSHFT DOWN &kp RIGHT     &kp LC(S)    &trans       &kp F5        &kp F6        &kp F7      &kp F8
                 &kp LC(Y)   &kp LC(X)    &kp LC(C)     &kp LC(V)      &kp NUBS     &trans       &kp F1        &kp F2        &kp F3      &kp F4
                                      &trans     &trans   &trans         &trans          &trans      &trans
             >;
