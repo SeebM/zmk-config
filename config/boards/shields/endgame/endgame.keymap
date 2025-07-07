@@ -43,13 +43,13 @@ combo_##NAME { \
         };
        
         COMBO(shiftablesch, &macro_shiftable_sch, 17 18, 0)
-        COMBO(scharfS,  &kp MINUS,  18 19, BASE DE) // Scharf S ß
+        COMBO(scharfS,  &kp MINUS,  16 17, BASE DE) // Scharf S ß
         COMBO(LT,   &kp NUBS,       21  22, 0 ) // lower than
         COMBO(PIP,   &kp RA(NUBS),  21  22, 1)  // PIPE
         COMBO(GT,   &kp LS(NUBS),   27  28, 0 ) // greater than
         COMBO(TLD,  &kp RA(RBKT),   27  28, 1) // Tilde
         COMBO(DOT,  &kp DOT,        12  13, 0 1)  
-        COMBO(CMA,&kp COMMA,        10  11, 0 1)
+        COMBO(CMA,&kp COMMA,        11  12, 0 1)
         COMBO(ESC,  &kp ESC,        10  1,  0 1 2 3)
         COMBO(SQT,  &kp LS(NUHS),   26  27, NUM  ) // Single quotes
         COMBO(DQT,  &kp LS(N2),     26  27, BASE )// Double quotes
