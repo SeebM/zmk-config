@@ -154,10 +154,10 @@ combo_##NAME { \
         };
         lt_space: layer_toggle_space {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <250>;
-            bindings = <&mo>, <&morph_key>;
+            bindings = <&mo>, <&morph_spc>;
             display-name = "Layer-Toggle writing";
         };
         morph_spc1: morph_spc1 {
