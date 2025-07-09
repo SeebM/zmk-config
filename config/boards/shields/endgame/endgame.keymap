@@ -152,7 +152,7 @@ combo_##NAME { \
             bindings = <&mo>, <&kp>;
             display-name = "Layer-Toggle writing";
         };
-        lt_space: layer_toggle_write {
+        lt_space: layer_toggle_space {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <1>;
             flavor = "balanced";
