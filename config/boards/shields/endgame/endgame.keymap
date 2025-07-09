@@ -43,22 +43,22 @@ combo_##NAME { \
         };
        
         COMBO(shiftablesch, &macro_shiftable_sch, 17 18, 0)
-        COMBO(scharfS,  &kp MINUS,  16 17, BASE DE) // Scharf S ß
+        COMBO(sfS,  &kp MINUS,  16 17, BASE DE) // Scharf S ß
         COMBO(LT,   &kp NUBS,       21  22, 0 ) // lower than
-        //COMBO(PIP,   &kp RA(NUBS),  21  22, 1)  // PIPE
+        //COMBO(PIP,  &kp RA(NUBS),  21  22, 1)  // PIPE
         COMBO(GT,   &kp LS(NUBS),   27  28, 0 ) // greater than
         COMBO(TLD,  &kp RA(RBKT),   27  28, 1) // Tilde
         COMBO(DOT,  &kp DOT,        11  13, 0 1)  
-        COMBO(CMA,&kp COMMA,        12  13, 0 1)
+        COMBO(CMA,  &kp COMMA,        12  13, 0 1)
         COMBO(ESC,  &kp ESC,        10  1,  0 1 2 3)
         COMBO(SQT,  &kp LS(NUHS),   26  27, NUM  ) // Single quotes
         COMBO(DQT,  &kp LS(N2),     26  27, BASE )// Double quotes
         COMBO(EQL,  &kp LS(N0),     16  17, NUM)
-        COMBO(ENTR, &kp ENTER,      7   8,  0 1 2 3)
-        COMBO(TAB, &kp ENTER,       1   2,  0 1 2 3)
-        COMBO(br1, &macro_brc1,     22 23,  NUM)
-        COMBO(br2, &macro_brc2,     21 22,  NUM)
-        COMBO(br3, &macro_brc3,     20 21,  NUM)
+        COMBO(ENT,  &kp ENTER,      7   8,  0 1 2 3)
+        COMBO(ENT2, &kp ENTER,       1   2,  0 1 2 3)
+        COMBO(br1,  &macro_brc1,     22 23,  NUM)
+        COMBO(br2,  &macro_brc2,     21 22,  NUM)
+        COMBO(br3,  &macro_brc3,     20 21,  NUM)
 
     };
     macros {       
@@ -194,7 +194,7 @@ combo_##NAME { \
             label= "NAV";
             bindings = <
                 &kp TAB     &kp HOME     &kp UP        &kp END        &snip        &trans       &kp F9        &kp F10       &kp F11     &kp F12
-                &kp DEL     &kp LEFT     &hl LSHFT DOWN &kp RIGHT     &kp LC(S)    &trans       &kp F5        &kp F6        &kp F7      &kp F8
+                &kp DEL     &kp LEFT     &kp DOWN      &kp RIGHT      &kp LC(S)    &trans       &hr LCTRL F5  &hr LSHFT F6  &hr LALT F7 &kp F8
                 &kp LC(Y)   &kp LC(X)    &kp LC(C)     &kp LC(V)      &kp NUBS     &trans       &kp F1        &kp F2        &kp F3      &kp F4
                                      &trans     &trans   &trans         &trans          &trans      &trans
             >;
