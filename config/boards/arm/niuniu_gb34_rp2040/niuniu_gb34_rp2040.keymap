@@ -38,19 +38,23 @@ combo_##NAME { \
         };
        
         COMBO(shiftablesch, &macro_shiftable_sch, 19 20, 0)
+        COMBO(sfS,  &kp MINUS,  18 19, BASE DE) // Scharf S ß
         COMBO(LT,   &kp NUBS,       23  24, BASE ) // lower than
         COMBO(PIP,   &kp RA(NUBS),  23  24, NUM)  // PIPE
         COMBO(GT,   &kp LS(NUBS),   30  31, BASE ) // greater than
         COMBO(TLD,  &kp RA(RBKT),   30  31, NUM) // Tilde
-        COMBO(DOT,  &kp DOT,        13  14, BASE NUM)  
-        COMBO(CMA,&kp COMMA,        18  19, BASE NUM)
+        COMBO(DOT,  &kp DOT,        12  14, BASE NUM)  
+        COMBO(CMA,&kp COMMA,        13  14, BASE NUM)
         COMBO(ESC,  &kp ESC,        11  1,  BASE NUM NAV DE)
-        COMBO(SQT,  &kp LS(NUHS),   24  25, BASE ) // Single quotes
+        COMBO(SQT,  &kp LS(NUHS),   29 30, NUM ) // Single quotes
         COMBO(DQT,  &kp LS(N2),     29  30, BASE )// Double quotes
-        COMBO(EQL,  &kp LS(N0),     29  30, NUM)
+        COMBO(EQL,  &kp LS(N0),     18  19, NUM)
         COMBO(ENTR, &kp ENTER,      8   9,  BASE NUM NAV DE)
         COMBO(ENTR2, &kp ENTER,     1   2,  BASE NUM NAV DE)
         COMBO(GAM, &tog GAMING,     33  38, BASE GAMING)
+        COMBO(br1,  &macro_brc1,     24 25,  NUM)
+        COMBO(br2,  &macro_brc2,     23 24,  NUM)
+        COMBO(br3,  &macro_brc3,     22 23,  NUM)
 
     };
     macros {       
@@ -141,6 +145,14 @@ combo_##NAME { \
             // opposite side hand keys
             hold-trigger-key-positions = <0 1 2 3 4 5 11 12 13 14 15 22 23 24 25 26 33 34 35 36 37 38 39>;
         };
+        lt_wr: layer_toggle_write {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
+            display-name = "Layer-Toggle writing";
+        };
     }; 
 
 
@@ -153,7 +165,7 @@ combo_##NAME { \
     &kp Q       &kp V        &kp K          &kp C           &kp C_MUTE   &none    &kp LS(LA(K))    &kp H       &kp G       &kp F       &kp P
     &kp U       &hl LALT I   &hl LSHFT A    &hl LCTRL E     &kp O       &none    &kp D       &hr LCTRL N &hr LSHFT R &hr LALT T  &kp S
     &hl LGUI X  &kp Z        &kp Y          &kp L           &kp DOT     &none    &kp COMMA   &kp M       &kp B       &kp W       &hr LGUI J
-                   &none         &lt NUM SPACE         &lt NAV TAB     &kp LSHIFT  &lt DE BSPC       &none 
+                   &none         &lt NUM SPACE         &lt NAV TAB     &kp LSHIFT  &lt_wr DE BSPC       &none 
             >;
         };
     GAM_layer {
@@ -168,18 +180,18 @@ combo_##NAME { \
         NUM_layer {
             label= "NUM";
             bindings = <
-    &kp F1      &kp F2        &kp F3           &kp F4           &kp F5     &none   &kp F6         &kp F7       &kp F8       &kp F9         &kp F10
-    &kp N1      &hl LALT N2   &hl LSHFT N3     &hl LCTRL N4     &kp N5     &none   &kp N6         &hr LCTRL N7 &hr LSHFT N8 &hr LALT N9    &kp N0
-    &kp DEL     &macro_brc3   &macro_brc2      &macro_brc1      &kp FSLH   &none   &kp LS(FSLH)   &kp RBKT     &kp SLASH    &kp LS(RBKT)   &kp LS(N7) 
+    &kp BSPC   &kp N4        &kp N5           &kp N6            &trans           &none   &kp LS(N5)           &kp LS(N2)      &kp BSLH       &kp GRAVE         &kp NUHS
+    &kp N0     &hl LALT N1   &hl LSHFT N2     &hl LCTRL N3      &hl RALT ENTER   &none   &hr RALT LS(N0)      &hr LCTRL RBKT &hr LSHFT SLASH &hr LALT LS(RBKT) &kp LS(N7)
+    &kp DEL    &kp N7        &kp N8           &kp N9            &trans           &none   &kp LS(GRAVE)        &kp LS(N6)     &kp LS(GRAVE)   &kp RA(RBKT)      &kp RA(MINUS)
                     &trans    &trans    &trans              &trans       &trans       &trans    
             >;
         };
         NAV_layer {
     label= "NAV";
     bindings = <
-        &kp TAB     &kp HOME     &kp UP        &kp END        &snip      &none      &kp LS(N5)   &kp LS(N2)      &kp BSLH         &kp GRAVE         &kp NUHS
-        &kp DEL     &kp LEFT     &hl LSHFT DOWN &kp RIGHT     &kp LC(S)  &none      &kp LS(N0)   &hr LCTRL RBKT  &hr LSHIFT SLASH &hr LALT LS(RBKT) &kp LS(N7)
-        &kp LC(Y)   &kp LC(X)    &kp LC(C)     &kp LC(V)      &kp NUBS   &none      &kp LS(GRAVE) &kp LS(N6)     &kp LS(GRAVE)    &kp RA(RBKT)      &kp RA(MINUS)
+        &kp TAB     &kp HOME     &kp UP        &kp END        &snip      &none      &trans       &kp F9        &kp F10       &kp F11     &kp F12
+        &kp DEL     &kp LEFT     &kp DOWN      &kp RIGHT      &kp LC(S)  &none      &trans       &hr LCTRL F5  &hr LSHFT F6  &hr LALT F7 &kp F8
+        &kp LC(Y)   &kp LC(X)    &kp LC(C)     &kp LC(V)      &kp NUBS   &none      &trans       &kp F1        &kp F2        &kp F3      &kp F4
         &trans      &trans       &trans        &trans         &trans     &trans     
     >;
     };
@@ -188,7 +200,7 @@ combo_##NAME { \
             label= "DE";
             bindings = <
                 &kp RA(Q) &trans       &trans       &kp C_VOL_DN &kp C_MUTE   &none  &trans   &kp C_VOL_UP   &trans               &trans       &kp ENTER
-                &kp LBKT  &trans       &kp SQT      &kp RA(E)    &kp SEMI     &none  &trans   &kp LS(N1)     &hr LSHIFT LS(MINUS) &trans       &kp MINUS
+                &kp LBKT  &trans       &kp SQT      &kp RA(E)    &kp SEMI     &none  &trans   &kp LS(N1)     &hr LSHIFT LS(MINUS) &trans       &trans
                 &none     &none        &none        &none        &none        &none  &none    &none          &none                &none        &none
                 &trans      &trans       &trans        &trans         &trans     &trans    
             >;
