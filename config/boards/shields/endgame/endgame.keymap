@@ -157,7 +157,7 @@ combo_##NAME { \
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <250>;
-            bindings = <&mo>, <&>;
+            bindings = <&mo>, <&morph_spc1>;
             display-name = "Layer-Toggle writing";
         };
         morph_spc1: morph_spc1 {
@@ -189,7 +189,7 @@ combo_##NAME { \
                 &kp Q       &kp V        &kp K          &kp C           &kp C_MUTE  &kp LG(LA(K))    &kp H       &kp G       &kp F       &kp P
                 &kp U       &hl LALT I   &hl LSHFT A    &hl LCTRL E     &hl RALT O  &hr RALT D  &hr LCTRL N &hr LSHFT R &hr LALT T  &kp S
                 &hl LGUI X  &kp Z        &kp Y          &kp L           &kp DOT     &kp COMMA   &kp M       &kp B       &kp W       &hr LGUI J
-                &none                                   &lt_space 1 morph_spc     &lt 2 TAB   &kp LSHIFT    &lt_wr 3 BSPC                          &none
+                &none                                   &lt_space 1 0     &lt 2 TAB   &kp LSHIFT    &lt_wr 3 BSPC                          &none
                         >;
         };
 
