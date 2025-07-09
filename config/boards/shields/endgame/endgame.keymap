@@ -35,13 +35,8 @@ combo_##NAME { \
     };
 
     combos {
-       compatible = "zmk,combos";
-        /* Top corners (Q+P) = bootloader */
-        combo_boot {
-            key-positions = <0 9>;
-            bindings = <&bootloader>;
-        };
-       
+        compatible = "zmk,combos";
+        COMBO(boot, &bootloader, 0 9, BASE)
         COMBO(shiftablesch, &macro_shiftable_sch, 17 18, 0)
         COMBO(sfS,  &kp MINUS,  16 17, BASE DE) // Scharf S ß
         COMBO(LT,   &kp NUBS,       21  22, 0 ) // lower than
