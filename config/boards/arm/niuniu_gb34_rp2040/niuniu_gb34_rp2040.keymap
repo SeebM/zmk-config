@@ -37,7 +37,7 @@ combo_##NAME { \
         COMBO(shiftablesch, &macro_shiftable_sch, 19 20, 0)
         COMBO(sfS,  &kp MINUS,  18 19, BASE DE) // Scharf S ß
         COMBO(LT,   &kp NUBS,       23  24, BASE ) // lower than
-        COMBO(PIP,   &kp RA(NUBS),  23  24, NUM)  // PIPE
+        //COMBO(PIP,   &kp RA(NUBS),  23  24, NUM)  // PIPE
         COMBO(GT,   &kp LS(NUBS),   30  31, BASE ) // greater than
         COMBO(TLD,  &kp RA(RBKT),   30  31, NUM) // Tilde
         COMBO(DOT,  &kp DOT,        12  14, BASE NUM)  
@@ -179,7 +179,7 @@ combo_##NAME { \
             bindings = <
     &kp BSPC   &kp N4        &kp N5           &kp N6            &trans           &none   &kp LS(N5)           &kp LS(N2)      &kp BSLH       &kp GRAVE         &kp PLUS
     &kp N0     &hl LALT N1   &hl LSHFT N2     &hl LCTRL N3      &hl RALT ENTER   &none   &hr RALT LS(N0)      &hr LCTRL RBKT &hr LSHFT SLASH &hr LALT LS(RBKT) &kp LS(N7)
-    &kp DEL    &kp N7        &kp N8           &kp N9            &trans           &none   &kp LS(GRAVE)        &kp LS(N6)     &kp LS(GRAVE)   &kp RA(RBKT)      &kp RA(MINUS)
+    &kp DEL    &kp N7        &kp N8           &kp N9            &trans           &none   &kp RA(NUBS)         &kp LS(N6)     &kp LS(GRAVE)   &kp RA(RBKT)      &kp RA(MINUS)
                     &trans    &trans    &trans              &trans       &trans       &trans    
             >;
         };
