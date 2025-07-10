@@ -185,9 +185,9 @@ combo_##NAME { \
         NAV_layer {
     label= "NAV";
     bindings = <
-        &kp TAB     &kp HOME     &kp UP        &kp END        &snip      &none      &trans       &kp F9        &kp F10       &kp F11     &kp F12
-        &kp DEL     &kp LEFT     &kp DOWN      &kp RIGHT      &kp LC(S)  &none      &trans       &hr LCTRL F5  &hr LSHFT F6  &hr LALT F7 &kp F8
-        &kp LC(Y)   &kp LC(X)    &kp LC(C)     &kp LC(V)      &trans     &none      &trans       &kp F1        &kp F2        &kp F3      &kp F4
+        &kp LC(Z)   &kp HOME     &kp UP        &kp END        &snip      &none      &trans       &kp F9        &kp F10       &kp F11     &kp F12
+        &kp LC(Y)   &kp LEFT     &kp DOWN      &kp RIGHT      &kp LC(S)  &none      &trans       &hr LCTRL F5  &hr LSHFT F6  &hr LALT F7 &kp F8
+        &kp DEL     &kp LC(X)    &kp LC(C)     &kp LC(V)      &trans     &none      &trans       &kp F1        &kp F2        &kp F3      &kp F4
         &trans      &trans       &trans        &trans         &trans     &trans     
     >;
     };
