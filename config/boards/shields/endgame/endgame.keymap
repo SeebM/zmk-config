@@ -42,7 +42,7 @@ combo_##NAME { \
         COMBO(LT,   &kp NUBS,       21  22, 0 ) // lower than
         //COMBO(PIP,  &kp RA(NUBS),  21  22, 1)  // PIPE
         COMBO(GT,   &kp LS(NUBS),   27  28, 0 ) // greater than
-        COMBO(TLD,  &kp RA(RBKT),   27  28, 1) // Tilde
+        COMBO(TLD,  &kp RA(NUBS),   27  28, NUM) // Tilde
         COMBO(DOT,  &kp DOT,        11  13, 0 1)  
         COMBO(CMA,  &kp COMMA,        12  13, 0 1)
         COMBO(ESC,  &kp ESC,        10  1,  0 1 2 3)
@@ -51,7 +51,6 @@ combo_##NAME { \
         COMBO(EQL,  &kp LS(N0),     16  17, NUM)
         COMBO(ENT,  &kp ENTER,      7   8,  0 1 2 3)
         COMBO(ENT2, &kp ENTER,      1   2,  0 1 )
-        COMBO(BSP,  &kp BSPC,       1   2,   2)
         COMBO(br1,  &macro_brc1,     22 23,  NUM)
         COMBO(br2,  &macro_brc2,     21 22,  NUM)
         COMBO(br3,  &macro_brc3,     20 21,  NUM)
@@ -212,7 +211,7 @@ combo_##NAME { \
             bindings = <
                 &kp LC(Z)   &kp HOME     &kp UP        &kp END        &snip        &trans       &kp F9        &kp F10       &kp F11     &kp F12
                 &kp LC(Y)   &kp LEFT     &kp DOWN      &kp RIGHT      &kp LC(S)    &trans       &hr LCTRL F5  &hr LSHFT F6  &hr LALT F7 &kp F8
-                &kp DEL     &kp LC(X)    &kp LC(C)     &kp LC(V)      &kp NUBS     &trans       &kp F1        &kp F2        &kp F3      &kp F4
+                &kp DEL     &kp LC(X)    &kp LC(C)     &kp LC(V)      &trans       &trans       &kp F1        &kp F2        &kp F3      &kp F4
                                      &trans     &trans   &trans         &trans          &trans      &trans
             >;
         };
