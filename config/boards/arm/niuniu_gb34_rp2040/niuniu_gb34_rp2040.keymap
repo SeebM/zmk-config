@@ -175,9 +175,9 @@ combo_##NAME { \
         NUM_layer {
             label= "NUM";
             bindings = <
-    &kp BSPC   &kp N4        &kp N5           &kp N6            &kp COMMA        &none   &kp LS(N5)           &kp LS(N4)      &kp BSLH       &kp GRAVE         &kp PLUS
-    &kp N0     &hl LALT N1   &hl LSHFT N2     &hl LCTRL N3      &hl RALT DOT     &none   &hr RALT LS(N0)      &hr LCTRL RBKT &hr LSHFT SLASH &hr LALT LS(RBKT) &kp LS(N7)
-    &kp DEL    &kp N7        &kp N8           &kp N9            &trans           &none   &kp RA(NUBS)         &kp LS(N6)     &kp LS(GRAVE)   &kp RA(RBKT)      &kp RA(MINUS)
+    &kp BSPC   &kp N4        &kp N5           &kp N6            &kp COMMA        &none   &kp LS(N5)       &kp LS(N4)      &kp BSLH       &kp GRAVE         &kp PLUS
+    &kp N0     &hl LALT N1   &hl LSHFT N2     &hl LCTRL N3      &hl RALT DOT     &none   &hr RALT LS(N0)  &hr LCTRL RBKT &hr LSHFT SLASH &hr LALT LS(RBKT) &kp LS(N7)
+    &kp DEL    &kp N7        &kp N8           &kp N9            &trans           &none   &trans           &kp LS(N6)     &kp LS(GRAVE)   &kp RA(RBKT)      &kp RA(MINUS)
                     &trans    &trans    &trans              &trans       &trans       &trans    
             >;
         };
@@ -186,7 +186,7 @@ combo_##NAME { \
     bindings = <
         &kp TAB     &kp HOME     &kp UP        &kp END        &snip      &none      &trans       &kp F9        &kp F10       &kp F11     &kp F12
         &kp DEL     &kp LEFT     &kp DOWN      &kp RIGHT      &kp LC(S)  &none      &trans       &hr LCTRL F5  &hr LSHFT F6  &hr LALT F7 &kp F8
-        &kp LC(Y)   &kp LC(X)    &kp LC(C)     &kp LC(V)      &kp NUBS   &none      &trans       &kp F1        &kp F2        &kp F3      &kp F4
+        &kp LC(Y)   &kp LC(X)    &kp LC(C)     &kp LC(V)      &trans     &none      &trans       &kp F1        &kp F2        &kp F3      &kp F4
         &trans      &trans       &trans        &trans         &trans     &trans     
     >;
     };
