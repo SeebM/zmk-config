@@ -38,6 +38,7 @@ combo_##NAME { \
         COMBO(sfS,  &kp MINUS,  18 19, BASE DE) // Scharf S ß
         COMBO(LT,   &kp NUBS,       23  24, BASE ) // lower than
         COMBO(GT,   &kp LS(NUBS),   30  31, BASE ) // greater than
+        COMBO(PIP,  &kp RA(NUBS),   30  31, NUM ) // PIPE
         COMBO(DOT,  &kp DOT,        12  14, BASE NUM)  
         COMBO(CMA,&kp COMMA,        13  14, BASE NUM)
         COMBO(ESC,  &kp ESC,        11  1,  BASE NUM NAV DE)
