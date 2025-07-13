@@ -62,11 +62,7 @@ behaviors {
 
     combos {
         compatible = "zmk,combos";
-        /* Top corners (Q+P) = bootloader */
-        combo_boot {
-            key-positions = <0 9>;
-            bindings = <&bootloader>;
-        };
+        
         /* Bottom corners (Z+/) = RGB toggle */
         combo_rgb_tog {
             key-positions = <20 29>;
@@ -88,7 +84,7 @@ behaviors {
         COMBO(ENT2, &kp ENTER,      1   2,  0 1 )
         COMBO(br1,  &macro_brc1,     22 23,  NUM)
         COMBO(br2,  &macro_brc2,     21 22,  NUM)
-        COMBO(br3,  &macro_brc3,     20 21,  NUM
+        COMBO(br3,  &macro_brc3,     20 21,  NUM)
     };
 macros {       
         snip: snip {
