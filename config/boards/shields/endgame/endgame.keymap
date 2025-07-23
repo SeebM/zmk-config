@@ -11,7 +11,7 @@
 //#include "keys_de.h"
 
 #define BASE 0
-#define COLM 1
+#define APT  1
 #define NUM  2
 #define NAV  3
 #define DE   4
@@ -39,16 +39,16 @@ combo_##NAME { \
         compatible = "zmk,combos";
         COMBO(boot, &bootloader, 0 9, BASE)
         COMBO(shiftablesch, &macro_shiftable_sch, 17 18, BASE COLM)
-        COMBO(sfS,  &kp MINUS,      16 17,  BASE COLM DE) // Scharf S ß
-        COMBO(LT,   &kp NUBS,       21  22, BASE COLM) // lower than
-        COMBO(GT,   &kp LS(NUBS),   27  28, BASE COLM) // greater than
+        COMBO(sfS,  &kp MINUS,      16 17,  BASE APT DE) // Scharf S ß
+        COMBO(LT,   &kp NUBS,       21  22, BASE APT) // lower than
+        COMBO(GT,   &kp LS(NUBS),   27  28, BASE APT) // greater than
         COMBO(TLD,  &kp RA(NUBS),   27  28, NUM) // Tilde
         COMBO(DOT,  &kp DOT,        11  13, BASE NUM)  
         COMBO(CMA,  &kp COMMA,      12  13, BASE NUM)
-        COMBO(ESC,  &kp ESC,        10  1,  BASE COLM NUM NAV DE)
+        COMBO(ESC,  &kp ESC,        10  1,  BASE APT NUM NAV DE)
         COMBO(SQT,  &kp LS(NUHS),   26  27, NUM  ) // Single quotes
-        COMBO(DQT,  &kp LS(N2),     26  27, BASE COLM)// Double quotes
-        COMBO(ENT,  &kp ENTER,      7   8,  BASE COLM NUM NAV DE)
+        COMBO(DQT,  &kp LS(N2),     26  27, BASE APT)// Double quotes
+        COMBO(ENT,  &kp ENTER,      7   8,  BASE APT NUM NAV DE)
         COMBO(ENT2, &kp ENTER,      1   2,  BASE NUM)
         COMBO(br1,  &macro_brc1,    22 23,  NUM)
         COMBO(br2,  &macro_brc2,    21 22,  NUM)
@@ -194,14 +194,14 @@ combo_##NAME { \
                 &kp Q       &kp V        &kp K          &kp C           &kp C_MUTE  &kp LG(LA(K))    &kp H       &kp G       &kp F       &kp P
                 &kp U       &hl LALT I   &hl LSHFT A    &hl LCTRL E     &hl RALT O  &hr RALT D  &hr LCTRL N &hr LSHFT R &hr LALT T  &kp S
                 &hl LGUI X  &kp Z        &kp Y          &kp L           &kp DOT     &kp COMMA   &kp M       &kp B       &kp W       &hr LGUI J
-                &to BASE                                &lt NUM SPACE   &lt NAV TAB &kp LSHIFT  &lt_wr DE BSPC                   &to COLM
+                &to BASE                                &lt NUM SPACE   &lt NAV TAB &kp LSHIFT  &lt_wr DE BSPC                   &to APT
                         >;
         };
-        COLEMAK_layer {
+        APT_layer {
             bindings = <
-                &kp Q       &kp W        &kp F          &kp P           &kp B       &kp  J      &kp L       &kp U       &kp Z       &morph_col
-                &kp A       &hl LALT R   &hl LSHFT S    &hl LCTRL T     &hl RALT G  &hr RALT M  &hr LCTRL N &hr LSHFT E &hr LALT I  &kp O
-                &hl LGUI Y  &kp X        &kp C          &kp D           &kp V       &kp K       &kp H       &kp COMMA   &kp DOT     &hr LGUI LS(N7)
+                &kp Q       &kp C        &kp D          &kp L           &kp X       &kp  Y      &kp Z       &kp O       &kp U       &morph_col
+                &kp R       &hl LALT S   &hl LSHFT T    &hl LCTRL H     &hl RALT K  &hr RALT P  &hr LCTRL N &hr LSHFT E &hr LALT I  &kp A
+                &hl LGUI W  &kp G        &kp B          &kp M           &kp V       &kp J       &kp F       &kp COMMA   &kp DOT     &hr LGUI LS(N7)
                 &trans                                  &trans          &trans      &trans      &trans                              &trans
                         >;
         };
