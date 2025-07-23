@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include "keys_de.h"
+//#include "keys_de.h"
 
 #define BASE 0
 #define COLM 1
@@ -40,15 +40,15 @@ combo_##NAME { \
         COMBO(boot, &bootloader, 0 9, BASE)
         COMBO(shiftablesch, &macro_shiftable_sch, 17 18, BASE COLM)
         COMBO(sfS,  &kp MINUS,       16 17, BASE COLM DE) // Scharf S ß
-        COMBO(LT,   &kp NUBS,       21  22, BASE ) // lower than
+        COMBO(LT,   &kp NUBS,       21  22, BASE COLM) // lower than
         //COMBO(PIP, &kp RA(NUBS),  21  22, NUM)  // PIPE
-        COMBO(GT,   &kp LS(NUBS),   27  28, BASE ) // greater than
+        COMBO(GT,   &kp LS(NUBS),   27  28, BASE COLM) // greater than
         COMBO(TLD,  &kp RA(NUBS),   27  28, NUM) // Tilde
         COMBO(DOT,  &kp DOT,        11  13, BASE NUM)  
         COMBO(CMA,  &kp COMMA,      12  13, BASE NUM)
         COMBO(ESC,  &kp ESC,        10  1,  BASE COLM NUM NAV DE)
         COMBO(SQT,  &kp LS(NUHS),   26  27, NUM  ) // Single quotes
-        COMBO(DQT,  &kp LS(N2),     26  27, BASE )// Double quotes
+        COMBO(DQT,  &kp LS(N2),     26  27, BASE COLM)// Double quotes
         COMBO(ENT,  &kp ENTER,      7   8,  BASE COLM NUM NAV DE)
         COMBO(ENT2, &kp ENTER,      1   2,  BASE NUM)
         COMBO(br1,  &macro_brc1,    22 23,  NUM)
@@ -191,27 +191,24 @@ combo_##NAME { \
 // |   30    |                   |   31    |   32    |   33    |   34    |                   |   35    |
 
         BASE_layer {
-            label= "BASE";
             bindings = <
                 &kp Q       &kp V        &kp K          &kp C           &kp C_MUTE  &kp LG(LA(K))    &kp H       &kp G       &kp F       &kp P
                 &kp U       &hl LALT I   &hl LSHFT A    &hl LCTRL E     &hl RALT O  &hr RALT D  &hr LCTRL N &hr LSHFT R &hr LALT T  &kp S
                 &hl LGUI X  &kp Z        &kp Y          &kp L           &kp DOT     &kp COMMA   &kp M       &kp B       &kp W       &hr LGUI J
-                &to BASE                                &lt NUM SPACE     &lt 2 TAB   &kp LSHIFT    &lt_wr DE BSPC                   &to COLM
+                &to BASE                                &lt NUM SPACE   &lt NAV TAB &kp LSHIFT  &lt_wr DE BSPC                   &to COLM
                         >;
         };
         COLEMAK_layer {
-            label= "COLM";
             bindings = <
                 &kp Q       &kp W        &kp F          &kp P           &kp B       &kp  J      &kp L       &kp U       &kp Z       &morph_col
                 &kp A       &hl LALT R   &hl LSHFT S    &hl LCTRL T     &hl RALT G  &hr RALT M  &hr LCTRL N &hr LSHFT E &hr LALT I  &kp O
-                &hl LGUI Y  &kp X        &kp C          &kp D           &kp V       &kp K       &kp H       &kp COMMA       &kp DOT &hr LGUI LS(N7)
-                &to BASE                                &lt NUM SPACE   &lt NAV TAB   &kp LSHIFT    &lt_wr DE BSPC                  &to COLM
+                &hl LGUI Y  &kp X        &kp C          &kp D           &kp V       &kp K       &kp H       &kp COMMA   &kp DOT     &hr LGUI LS(N7)
+                &trans                                  &trans          &trans      &trans      &trans                              &trans
                         >;
         };
 
 
         NUM_layer {
-            label= "NUM";
             bindings = <
                 &kp BSPC   &kp N4        &kp N5           &kp N6           &kp COMMA      &kp LS(N5)         &kp LS(N4)      &kp BSLH       &kp GRAVE         &kp PIPE
                 &kp N0     &hl LALT N1   &hl LSHFT N2     &hl LCTRL N3     &hl RALT DOT   &hr RALT LS(N0)      &hr LCTRL RBKT &hr LSHFT SLASH &hr LALT LS(RBKT) &kp LS(N7)
@@ -223,7 +220,6 @@ combo_##NAME { \
         
 
         NAV_layer {
-            label= "NAV";
             bindings = <
                 &kp LC(Z)   &kp HOME     &kp UP        &kp END        &snip        &trans       &kp F9        &kp F10       &kp F11     &kp F12
                 &kp LC(Y)   &kp LEFT     &kp DOWN      &kp RIGHT      &kp LC(S)    &trans       &hr LCTRL F5  &hr LSHFT F6  &hr LALT F7 &kp F8
@@ -232,7 +228,6 @@ combo_##NAME { \
             >;
         };
         DE_layer {
-            label= "DE";
             bindings = <
                 &kp RA(Q) &trans       &trans       &kp C_VOL_DN &kp C_MUTE LG(LA(K)) &kp C_VOL_UP   &trans               &trans       &kp ENTER
                 &kp LBKT  &trans       &kp SQT      &kp RA(E)    &kp SEMI   &trans    &kp LS(N1)     &hr LSHIFT LS(MINUS) &trans       &trans
