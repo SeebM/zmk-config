@@ -38,7 +38,7 @@ combo_##NAME { \
     combos {
         compatible = "zmk,combos";
         COMBO(boot, &bootloader, 0 9, BASE)
-        COMBO(shiftablesch, &macro_shiftable_sch, 17 18, BASE COLM)
+        COMBO(shiftablesch, &macro_shiftable_sch, 17 18, BASE APT)
         COMBO(sfS,  &kp MINUS,      16 17,  BASE APT DE) // Scharf S ß
         COMBO(LT,   &kp NUBS,       21  22, BASE APT) // lower than
         COMBO(GT,   &kp LS(NUBS),   27  28, BASE APT) // greater than
