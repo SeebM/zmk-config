@@ -159,12 +159,11 @@ combo_##NAME { \
             bindings = <&mo>, <&morph_spc1>;
             display-name = "Layer-Toggle writing";
         };
-        morph_col: morph_col {
+        morph_quot: morph_quot {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LS(DOT)>, <&kp LS(COMMA)>;
+            bindings = <&kp LS(N2)>, <&kp LS(NUHS)>;
             mods = <(MOD_LSFT)>;
-            keep-mods = <(MOD_LSFT)>;
         };
         morph_spc1: morph_spc1 {
             compatible = "zmk,behavior-mod-morph";
@@ -194,14 +193,14 @@ combo_##NAME { \
                 &kp Q       &kp V        &kp K          &kp C           &kp C_MUTE  &kp LG(LA(K))    &kp H      &kp G       &kp F       &kp P
                 &kp U       &hl LALT I   &hl LSHFT A    &hl LCTRL E     &hl RALT O  &hr RALT D      &hr LCTRL N &hr LSHFT R &hr LALT T  &kp S
                 &hl LGUI X  &kp Z        &kp Y          &kp L           &kp DOT     &kp COMMA       &kp M       &kp B       &kp W       &hr LGUI J
-                &to BASE                                &lt NUM SPACE   &lt NAV TAB &kp LSHIFT      &lt_wr DE BSPC                   &to APT
+                &to BASE                                &lt NUM SPACE   &lt NAV TAB &kp LSHIFT      &lt_wr DE BSPC                      &to APT
                         >;
         };
         APT_layer {
             bindings = <
                 &kp W       &kp G        &kp D          &kp F           &kp B       &kp  Q      &kp L       &kp U       &kp O       &kp Y
                 &kp R       &hl LALT S   &hl LSHFT T    &hl LCTRL H     &hl RALT K  &hr RALT J  &hr LCTRL N &hr LSHFT E &hr LALT A  &kp I
-                &hl LGUI X  &kp C        &kp M          &kp P           &kp V       &kp Z       &kp COMMA   &kp DOT     &kp LS(N1)  &hr LGUI LS(MINUS)
+                &hl LGUI X  &kp C        &kp M          &kp P           &kp V       &kp Z       &kp COMMA   &kp DOT     &kp SLASH   &morph_quot
                 &trans                                  &trans          &trans      &trans      &trans                              &trans
                         >;
         };
@@ -211,7 +210,7 @@ combo_##NAME { \
             bindings = <
                 &kp BSPC   &kp N4        &kp N5           &kp N6           &kp COMMA      &kp LS(N5)         &kp LS(N4)     &kp BSLH        &kp GRAVE         &kp PIPE
                 &kp N0     &hl LALT N1   &hl LSHFT N2     &hl LCTRL N3     &hl RALT DOT   &hr RALT LS(N0)    &hr LCTRL RBKT &hr LSHFT SLASH &hr LALT LS(RBKT) &kp LS(N7)
-                &kp DEL    &kp N7        &kp N8           &kp N9           &trans         &trans             &kp LS(N6)     &kp LS(GRAVE)   &kp RA(RBKT)      &kp RA(MINUS) 
+                &kp DEL    &kp N7        &kp N8           &kp N9           &trans         &kp EQUAL          &kp LS(N6)     &kp LS(GRAVE)   &kp RA(RBKT)      &kp RA(MINUS) 
                                         &trans        &trans        &trans       &trans       &trans &trans
             >;
         };
