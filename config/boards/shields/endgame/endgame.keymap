@@ -29,7 +29,7 @@ morph_##NAME: morph_##NAME {\
             #binding-cells = <0>;\
             bindings = <BIND1>, <BIND2>;\
             mods = <MODS>;\
-            keep-mods = <KEEP>;
+            keep-mods = <KEEP>;\
          }; 
 
 
