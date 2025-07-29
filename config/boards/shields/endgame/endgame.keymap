@@ -198,8 +198,8 @@ combo_##NAME { \
         };
         APT_layer {
             bindings = <
-                &kp B       &kp L        &kp D          &kp C           &kp W       &kp  Y      &kp P       &kp O       &kp U       &kp Q
-                &kp N       &hl LALT R   &hl LSHFT T    &hl LCTRL S     &hl RALT F  &hr RALT Z  &hr LCTRL H &hr LSHFT E &hr LALT I  &kp A
+                &kp B       &kp L        &kp D          &kp C           &kp W       &kp  Z      &kp P       &kp O       &kp U       &kp Q
+                &kp N       &hl LALT R   &hl LSHFT T    &hl LCTRL S     &hl RALT F  &hr RALT Y  &hr LCTRL H &hr LSHFT E &hr LALT I  &kp A
                 &hl LGUI X  &kp V        &kp G          &kp M           &kp SLASH   &morph_quot &kp K       &kp J       &kp COMMA   &kp DOT
                 &trans                                  &trans          &trans      &trans      &trans                              &trans
                         >;
