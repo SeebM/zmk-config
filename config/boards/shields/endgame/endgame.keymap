@@ -164,16 +164,16 @@ morph_##NAME: morph_##NAME {\
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(N2)>, <&kp LS(NUHS)>;
-            mods = <(MOD_LSFT)>;
+            mods = <MOD_LSFT>;
         };
         morph_ae: morph_ae {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp a>, <&kp SQT>;
-            mods = <(MOD_RALT)>;
+            mods = <MOD_RALT>;
         };
-        MORPH(oe,   &kp o, &kp SEMI, (MOD_RALT), 0)
-        MORPH(ue,   &kp u, &kp LBKT, (MOD_RALT), 0)
+        MORPH(oe,   &kp o, &kp SEMI, MOD_RALT, 0)
+        MORPH(ue,   &kp u, &kp LBKT, MOD_RALT, 0)
         
        
     };
