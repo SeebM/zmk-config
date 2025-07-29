@@ -166,9 +166,9 @@ morph_##NAME: morph_##NAME {\
             mods = <(MOD_LSFT)>;
         };
         
-        MORPH(oe,   o, SEMI, (MOD_RALT))
-        MORPH(ue,   u, LBKT, (MOD_RALT))
-        MORPH(ae,   a, SQT, (MOD_RALT))
+        //MORPH(oe,   o, SEMI, (MOD_RALT))
+        //MORPH(ue,   u, LBKT, (MOD_RALT))
+        //MORPH(ae,   a, SQT, (MOD_RALT))
                
        
     };
@@ -191,10 +191,10 @@ morph_##NAME: morph_##NAME {\
         };
         APT_layer {
             bindings = <
-                &kp B       &kp L        &kp D          &kp C           &kp W       &kp  Z      &kp P       &morph_oe   &morph_ue   &kp Q
-                &kp N       &hl LALT R   &hl LSHFT T    &hl LCTRL S     &hl RALT F  &hr RALT Y  &hr LCTRL H &hr LSHFT E &hr LALT I  &morph_ae
+                &kp B       &kp L        &kp D          &kp C           &kp W       &kp  Z      &kp P       &kp O       &kp U       &kp Q
+                &kp N       &hl LALT R   &hl LSHFT T    &hl LCTRL S     &hl RALT F  &hr RALT Y  &hr LCTRL H &hr LSHFT E &hr LALT I  &kp A
                 &hl LGUI X  &kp V        &kp G          &kp M           &kp SLASH   &morph_quot &kp K       &kp J       &kp COMMA   &kp DOT
-                &trans                                  &trans          &trans      &trans      &mt RALT BSPC                       &trans
+                &trans                                  &trans          &trans      &trans      &trans                              &trans
                         >;
         };
 
@@ -220,8 +220,8 @@ morph_##NAME: morph_##NAME {\
         };
         DE_layer {
             bindings = <
-                &kp RA(Q) &trans       &trans       &kp C_VOL_DN &kp C_MUTE &kp LG(LA(K)) &kp C_VOL_UP   &kp LBKT             &kp SEMI     &kp ENTER
-                &kp LBKT  &trans       &kp SQT      &kp RA(E)    &kp SEMI   &trans        &kp LS(N1)     &hr LSHIFT LS(MINUS) &kp SQT      &trans
+                &kp RA(Q) &trans       &trans       &kp C_VOL_DN &kp C_MUTE &kp LG(LA(K)) &kp C_VOL_UP   &kp SEMI             &kp LBKT     &kp ENTER
+                &kp LBKT  &trans       &kp SQT      &kp RA(E)    &kp SEMI   &trans        &kp LS(N1)     &hr LSHIFT LS(MINUS) &trans       &kp SQT
                 &none     &none        &none        &none        &none      &none         &none          &bt BT_SEL 0         &bt BT_SEL 1 &none
                  &bt BT_CLR                         &trans       &trans     &trans        &trans                              &bt BT_NXT
             >;
