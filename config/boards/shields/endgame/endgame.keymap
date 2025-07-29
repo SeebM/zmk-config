@@ -23,13 +23,12 @@ combo_##NAME { \
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
 };
-#define MORPH(NAME, BIND1, BIND2, MODS, KEEP) \
+#define MORPH(NAME, BIND1, BIND2, MODS) \
 morph_##NAME: morph_##NAME {\
              compatible = "zmk,behavior-mod-morph";\
             #binding-cells = <0>;\
-            bindings = <BIND1>, <BIND2>;\
+            bindings = <&kp BIND1>, <&kp BIND2>;\
             mods = <MODS>;\
-            keep-mods = <KEEP>;\
          }; 
 
 
@@ -167,9 +166,9 @@ morph_##NAME: morph_##NAME {\
             mods = <(MOD_LSFT)>;
         };
         
-        MORPH(oe,   &kp o, &kp SEMI, (MOD_RALT), 0)
-        MORPH(ue,   &kp u, &kp LBKT, (MOD_RALT), 0)
-        MORPH(ae,   &kp a, &kp SQT, (MOD_RALT), 0)
+        MORPH(oe,   o, SEMI, (MOD_RALT))
+        MORPH(ue,   u, LBKT, (MOD_RALT))
+        MORPH(ae,   a, SQT, (MOD_RALT))
                
        
     };
