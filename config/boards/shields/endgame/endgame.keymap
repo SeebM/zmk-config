@@ -23,6 +23,14 @@ combo_##NAME { \
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
 };
+#define MORPH(NAME, BIND1, BIND2, MODS, KEEP) \
+morph_##NAME: morph_##NAME {\
+             compatible = "zmk,behavior-mod-morph";\
+            #binding-cells = <0>;\
+            bindings = <BIND1>, <BIND2>;\
+            mods = <MODS>;\
+            keep-mods = <KEEP>;
+         }; 
 
 
 / {
@@ -151,33 +159,23 @@ combo_##NAME { \
             bindings = <&mo>, <&kp>;
             display-name = "Layer-Toggle writing";
         };
-        lt_space: layer_toggle_space {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <250>;
-            bindings = <&mo>, <&morph_spc1>;
-            display-name = "Layer-Toggle writing";
-        };
+        
         morph_quot: morph_quot {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(N2)>, <&kp LS(NUHS)>;
             mods = <(MOD_LSFT)>;
         };
-        morph_spc1: morph_spc1 {
+        morph_ae: morph_ae {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
+            bindings = <&kp a>, <&kp SQT>;
+            mods = <(MOD_RALT)>;
         };
+        MORPH(oe,   &kp o, &kp SEMI, (MOD_RALT), 0)
+        MORPH(ue,   &kp u, &kp LBKT, (MOD_RALT), 0)
         
-        morph_spc: morph_spc {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&morph_spc1>;
-            mods = <(MOD_LSFT|MOD_LCTL)>;
-        };
+       
     };
 
     keymap {
@@ -198,10 +196,10 @@ combo_##NAME { \
         };
         APT_layer {
             bindings = <
-                &kp B       &kp L        &kp D          &kp C           &kp W       &kp  Z      &kp P       &kp O       &kp U       &kp Q
-                &kp N       &hl LALT R   &hl LSHFT T    &hl LCTRL S     &hl RALT F  &hr RALT Y  &hr LCTRL H &hr LSHFT E &hr LALT I  &kp A
+                &kp B       &kp L        &kp D          &kp C           &kp W       &kp  Z      &kp P       &morph_oe   &morph_ue   &kp Q
+                &kp N       &hl LALT R   &hl LSHFT T    &hl LCTRL S     &hl RALT F  &hr RALT Y  &hr LCTRL H &hr LSHFT E &hr LALT I  &morph_ae
                 &hl LGUI X  &kp V        &kp G          &kp M           &kp SLASH   &morph_quot &kp K       &kp J       &kp COMMA   &kp DOT
-                &trans                                  &trans          &trans      &trans      &trans                              &trans
+                &trans                                  &trans          &trans      &trans      &mt RALT BSPC                       &trans
                         >;
         };
 
