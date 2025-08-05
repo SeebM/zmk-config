@@ -1,7 +1,0 @@
-/ {
-    niuniu_GB34_ortho_1x2u_position_map: niuniu_GB34_ortho_1x2u_position_map {
-        compatible = "zmk,physical-layout-position-map";
-
-        complete;
-    };
-};
