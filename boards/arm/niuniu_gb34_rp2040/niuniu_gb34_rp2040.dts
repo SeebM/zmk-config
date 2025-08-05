@@ -1,0 +1,95 @@
+/*
+* Copyright (c) 2025 The ZMK Contributors
+* SPDX-License-Identifier: MIT
+*/
+
+/dts-v1/;
+
+#include <rpi_pico/rp2040.dtsi>
+
+#include "niuniu_gb34_rp2040-transforms.dtsi"
+#include "niuniu_gb34_rp2040-layouts.dtsi"
+
+/ {
+
+    chosen {
+        zephyr,sram = &sram0;
+        zephyr,flash = &flash0;
+        zephyr,flash-controller = &ssi;
+        zephyr,code-partition = &code_partition;
+
+        zmk,kscan = &kscan0;
+       zmk-physical-layout = &layout_ortho_all1u;
+    };
+
+    xtal_clk: xtal-clk {
+        compatible = "fixed-clock";
+        clock-frequency = <12000000>;
+        #clock-cells = <0>;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+
+        diode-direction = "col2row";
+        row-gpios
+        = <&gpio0 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        ;
+        col-gpios
+        = <&gpio0  1 GPIO_ACTIVE_HIGH>
+        , <&gpio0  2 GPIO_ACTIVE_HIGH>
+        , <&gpio0  3 GPIO_ACTIVE_HIGH>
+        , <&gpio0  4 GPIO_ACTIVE_HIGH>
+        , <&gpio0  5 GPIO_ACTIVE_HIGH>
+        , <&gpio0  6 GPIO_ACTIVE_HIGH>
+        , <&gpio0 22 GPIO_ACTIVE_HIGH>
+        , <&gpio0 23 GPIO_ACTIVE_HIGH>
+        , <&gpio0 24 GPIO_ACTIVE_HIGH>
+        , <&gpio0 25 GPIO_ACTIVE_HIGH>
+        , <&gpio0 16 GPIO_ACTIVE_HIGH>
+        ;
+    };
+};
+
+&flash0 {
+    /* QSPI IC is W25Q16JVUXIQ */
+    reg = <0x10000000 DT_SIZE_M(2)>;
+
+    partitions {
+        compatible = "fixed-partitions";
+        #address-cells = <1>;
+        #size-cells = <1>;
+
+        /* Reserved memory for the second stage bootloader */
+        second_stage_bootloader: partition@0 {
+            reg = <0x00000000 0x100>;
+            read-only;
+        };
+
+        /*
+        * Usable flash. Starts at 0x100, after the bootloader. The partition
+        * size is 2MB minus the 0x100 bytes taken by the bootloader
+        * and 0x8000 for storage (smallest block erase size)
+        */
+        code_partition: partition@100 {
+            reg = <0x100 (DT_SIZE_M(2) - DT_SIZE_K(32) - 0x100)>;
+            read-only;
+        };
+
+        storage_partition: partition@1f8000 {
+            reg = <(DT_SIZE_M(2) - DT_SIZE_K(32)) DT_SIZE_K(32)>;
+        };
+    };
+};
+
+
+zephyr_udc0: &usbd {
+    status = "okay";
+};
+
+&gpio0 {
+    status = "okay";
+};

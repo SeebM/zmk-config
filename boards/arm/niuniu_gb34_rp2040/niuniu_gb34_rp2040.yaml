@@ -1,0 +1,15 @@
+identifier: Niuniu_GB34_RP2040
+name: Niuniu GB34
+type: mcu
+arch: arm
+flash: 16384
+ram: 264
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - gpio
+  - usb_device
+  - hwinfo
+  - pwm
