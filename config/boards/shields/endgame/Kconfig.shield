@@ -1,8 +1,0 @@
-# Copyright (c) 2021 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
-config SHIELD_ENDGAME
-    def_bool $(shields_list_contains,endgame)
-ZMK_STUDIO=y
-CONFIG_BT_MAX_CONN=2
-CONFIG_BT_MAX_PAIRED=2
