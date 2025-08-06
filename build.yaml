@@ -22,3 +22,7 @@ include:
   - board: niuniu_gb34_rp2040
   - board: niuniu_gb34_rp2040
     shield: settings_reset
+  - board: nice_nano_v2
+    shield: endgame
+  - board: nice_nano_v2
+    shield: settings_reset
