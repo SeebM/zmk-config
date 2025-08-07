@@ -39,7 +39,7 @@ morph_##NAME: morph_##NAME {\
 
     vbatt: vbatt {
             compatible = "zmk,battery-nrf-vddh";
-            label = "VBATT";
+            display-name = "VBATT";
     };
 
     combos {
@@ -69,10 +69,10 @@ morph_##NAME: morph_##NAME {\
             bindings = <&macro_press &kp LSHFT &kp LEFT_GUI
                         &macro_tap &kp S
                         &macro_release &kp LSHIFT &kp LEFT_GUI>;
-            label = "SNIP";
+            display-name = "SNIP";
         };
         macro_shiftable_sch: macro_shiftable_sch {
-            label = "Macro_shiftable_sch";
+            display-name = "Macro_shiftable_sch";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
@@ -83,7 +83,7 @@ morph_##NAME: morph_##NAME {\
             tap-ms = <10>;
         };
         macro_brc1: macro_brc1 {
-            label = "macro_brc1";
+            display-name = "macro_brc1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
@@ -94,7 +94,7 @@ morph_##NAME: morph_##NAME {\
             tap-ms = <10>;
         };
         macro_brc2: macro_brc2 {
-            label = "macro_brc2";
+            display-name = "macro_brc2";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
@@ -105,7 +105,7 @@ morph_##NAME: morph_##NAME {\
             tap-ms = <10>;
         };
         macro_brc3: macro_brc3 {
-            label = "macro_brc3";
+            display-name = "macro_brc3";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
@@ -122,7 +122,7 @@ morph_##NAME: morph_##NAME {\
     behaviors {
         hl: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "homerow mods left";
+            display-name = "homerow mods left";
             #binding-cells = <2>;
             //flavor = "hold-preferred";
             // flavor = "tap-preferred";
@@ -137,7 +137,7 @@ morph_##NAME: morph_##NAME {\
         };
         hr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "homerow mods right";
+            display-name = "homerow mods right";
             #binding-cells = <2>;
             //flavor = "hold-preferred";
             // flavor = "tap-preferred";
