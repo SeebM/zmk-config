@@ -19,7 +19,7 @@
         zephyr,code-partition = &code_partition;
 
         zmk,kscan = &kscan0;
-       zmk-physical-layout = &layout_ortho_all1u;
+       //zmk-physical-layout = &layout_ortho_all1u;
     };
 
     xtal_clk: xtal-clk {
