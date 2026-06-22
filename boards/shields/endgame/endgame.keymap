@@ -50,7 +50,7 @@ morph_##NAME: morph_##NAME {\
         COMBO(LT,   &kp NUBS,       21  22, BASE APT) // lower than
         COMBO(GT,   &kp LS(NUBS),   27  28, BASE APT) // greater than
         COMBO(TLD,  &kp RA(NUBS),   27  28, NUM) // Tilde
-        COMBO(DOT,  &kp DOT,        11  13, BASE APT NUM)  
+        COMBO(DOT,  &kp DOT,        11  12, BASE APT NUM)  
         COMBO(CMA,  &kp COMMA,      12  13, BASE APT NUM)
         COMBO(ESC,  &kp ESC,        10  1,  BASE APT NUM NAV DE)
         COMBO(SQT,  &kp LS(NUHS),   26  27, NUM  ) // Single quotes
